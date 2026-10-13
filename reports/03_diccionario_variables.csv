@@ -1,35 +1,61 @@
-﻿variable_original,variable_limpia,descripcion,dtype,pct_nulo,decision
-CASEID,id_caso,Identificador único,str,0.0,diseño muestral
-HWIDX,idx_nino,Índice niño,int64,0.0,diseño muestral
-hhid_key,id_hogar,Identificador hogar,int64,0.0,diseño muestral
-HV001,conglomerado,Conglomerado (diseño muestral),int64,0.0,diseño muestral
-HV022,estrato,Estrato (diseño muestral),int64,0.0,diseño muestral
-HV005,peso_muestral,Factor ponderación HV005/1e6,float64,0.0,diseño muestral
-HW1,edad_meses,Edad en meses,str,0.0,predictor
-HW70,zscore_haz,Z-score Talla/Edad x100,float64,0.0,predictor
-HW71,zscore_waz,Z-score Peso/Edad x100,float64,0.0,predictor
-HW72,zscore_whz,Z-score Peso/Talla x100,float64,0.0,predictor
-HW73,zscore_baz,Z-score IMC x100,float64,0.0,predictor
-HV024,region,"Región (1=Costa,2=Sierra,3=Selva)",int64,0.0,predictor
-HV025,area,"Área (1=Urbana,2=Rural)",int64,0.0,predictor
-HV040,altitud_m,Altitud metros s.n.m.,int64,0.0,predictor
-HV009,n_miembros,N miembros hogar,int64,0.0,predictor
-HV014,n_menores5,N menores 5 años,int64,0.0,predictor
-HV201,fuente_agua,Fuente de agua,str,0.0,predictor
-HV205,tipo_sanitario,Tipo sanitario,str,0.0,predictor
-HV206,tiene_elect,Tiene electricidad,str,0.0,predictor
-HV213,material_piso,Material piso,str,0.0,predictor
-HV270,indice_riqueza,Índice riqueza (quintil 1-5),str,0.0,predictor
-HV271,puntaje_riqueza,Puntaje continuo riqueza,str,0.0,predictor
-M1,lugar_parto,Lugar del parto,str,0.0,predictor
-M4,lactancia_dura,Duración lactancia (meses),int64,0.0,predictor
-M5,lactancia_exclusiva,Lactancia exclusiva meses,int64,0.0,predictor
-M14,n_controles_prenatales,N controles prenatales,str,0.0,predictor
-M17,asistio_parto,Asistencia profesional parto,int64,0.0,predictor
-M18,inicio_prenatal,Mes inicio prenatal,int64,0.0,predictor
-M19,peso_nacer_g,Peso al nacer (g),float64,2.01,predictor
-M36,meses_prev_nacer,Meses desde nac anterior,str,0.0,predictor
-M45,actualmente_amamanta,Actualmente amamanta,str,0.0,predictor
-HW57A,anemia,"TARGET: 1=anemia, 0=sin anemia. Def OMS2024/RM251-2024",int,0.0,target
-HW2/10,peso_kg,Peso niño en kg,float64,0.0,predictor
-HW3/10,talla_cm,Talla niño en cm,float64,0.0,predictor
+﻿variable_limpia,tipo_dato,%_nulo,rol_en_pipeline
+CASEID,str,0.0,Identificador
+HWIDX,int64,0.0,Identificador
+hhid,int64,0.0,Identificador
+conglomerado,int64,0.0,Diseño Muestral
+estrato,int64,0.0,Diseño Muestral
+peso_muestral,float64,0.0,Diseño Muestral
+anemia,int64,0.0,Target
+edad_meses,float64,0.0,Predictor
+menor_36m,int64,0.0,Predictor
+peso_kg,float64,0.07,Predictor
+talla_cm,float64,0.1,Predictor
+zscore_haz,float64,0.38,Predictor
+zscore_waz,float64,0.38,Predictor
+zscore_whz,float64,0.38,Predictor
+lugar_parto,category,0.0,Predictor
+cesarea,int64,0.0,Predictor
+tamano_nacer,float64,0.03,Predictor
+peso_nacer_g,float64,2.38,Predictor
+mes_primer_control,float64,11.19,Predictor
+n_controles_prenatales,float64,10.49,Predictor
+anemia_embarazo,float64,13.25,Predictor
+sis_embarazo,float64,10.4,Predictor
+nunca_amamanto,float64,0.0,Predictor
+amamanta_actual,float64,0.0,Predictor
+meses_lactancia,float64,0.01,Predictor
+inicio_lactancia_horas,float64,0.64,Predictor
+pecho_a_demanda,float64,65.49,Predictor
+veces_pecho_noche,float64,65.49,Predictor
+veces_pecho_dia,float64,65.49,Predictor
+biberon_ayer,float64,0.07,Predictor
+comidas_solidas_ayer,float64,0.1,Predictor
+lactancia_exclusiva_6m,float64,41.2,Predictor
+sis_nino,float64,0.05,Predictor
+educ_madre,float64,0.0,Predictor
+edad_madre,float64,0.0,Predictor
+departamento,category,0.0,Predictor
+area_residencia,category,0.0,Predictor
+altitud_m,int64,0.0,Predictor
+region_natural,category,0.0,Predictor
+n_miembros,int64,0.0,Predictor
+n_menores5,int64,0.0,Predictor
+n_habitaciones,float64,0.0,Predictor
+sexo_jefe,float64,0.0,Predictor
+edad_jefe,float64,0.0,Predictor
+hacinamiento,float64,0.0,Predictor
+fuente_agua,category,0.0,Predictor
+agua_red_dentro,float64,0.0,Predictor
+tipo_bano,category,0.0,Predictor
+saneamiento_inadecuado,float64,0.0,Predictor
+comparte_bano,float64,6.49,Predictor
+material_piso,category,1.52,Predictor
+piso_tierra,float64,1.52,Predictor
+material_pared,category,1.52,Predictor
+material_techo,category,1.52,Predictor
+combustible_cocina,category,0.0,Predictor
+combustible_solido,float64,0.0,Predictor
+lugar_cocina,category,60.14,Predictor
+tiene_lavamanos,float64,0.0,Predictor
+indice_riqueza,float64,0.0,Predictor
+particion,str,0.0,Partición
