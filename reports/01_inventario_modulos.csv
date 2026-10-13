@@ -1,0 +1,11 @@
+﻿archivo,modulo,filas,columnas,celdas_nulas,pct_nulo,descripcion
+REC44_2025.csv,1638_Anemia,18841,34,0,0.0,Hemoglobina / Nivel de anemia / Peso-Talla niño
+RECH5_2025.csv,1638_Anemia,37679,40,0,0.0,Mediciones antropométricas de mujeres (madres)
+RECH6_2025.csv,1638_Anemia,19298,43,0,0.0,Mediciones hemoglobina / antrop. niños (duplica algo de REC44)
+RECH0_2025.csv,1629_Hogar,37331,44,0,0.0,"Hogar: conglomerado, peso muestral, región, área, altitud"
+RECH1_2025.csv,1629_Hogar,131929,36,0,0.0,"Miembros del hogar: sexo, edad, parentesco, educación"
+RECH4_2025.csv,1629_Hogar,131929,22,0,0.0,Vacunas y salud por miembro
+RECHM_2025.csv,1629_Hogar,2714,8,0,0.0,Migración
+RECH23_2025.csv,1630_Vivienda,37331,130,0,0.0,"Vivienda: agua, saneamiento, piso, activos, índice riqueza"
+REC41_2025.csv,1633_Embarazo,18841,147,0,0.0,"Embarazo, parto, controles prenatales, lactancia"
+REC94_2025.csv,1633_Embarazo,18841,61,0,0.0,Suplemento hierro y micronutrientes [DUDOSA - posible efecto]

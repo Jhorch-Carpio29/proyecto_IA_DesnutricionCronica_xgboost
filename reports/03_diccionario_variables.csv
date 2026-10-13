@@ -1,0 +1,35 @@
+﻿variable_original,variable_limpia,descripcion,dtype,pct_nulo,decision
+CASEID,id_caso,Identificador único,str,0.0,diseño muestral
+HWIDX,idx_nino,Índice niño,int64,0.0,diseño muestral
+hhid_key,id_hogar,Identificador hogar,int64,0.0,diseño muestral
+HV001,conglomerado,Conglomerado (diseño muestral),int64,0.0,diseño muestral
+HV022,estrato,Estrato (diseño muestral),int64,0.0,diseño muestral
+HV005,peso_muestral,Factor ponderación HV005/1e6,float64,0.0,diseño muestral
+HW1,edad_meses,Edad en meses,str,0.0,predictor
+HW70,zscore_haz,Z-score Talla/Edad x100,float64,0.0,predictor
+HW71,zscore_waz,Z-score Peso/Edad x100,float64,0.0,predictor
+HW72,zscore_whz,Z-score Peso/Talla x100,float64,0.0,predictor
+HW73,zscore_baz,Z-score IMC x100,float64,0.0,predictor
+HV024,region,"Región (1=Costa,2=Sierra,3=Selva)",int64,0.0,predictor
+HV025,area,"Área (1=Urbana,2=Rural)",int64,0.0,predictor
+HV040,altitud_m,Altitud metros s.n.m.,int64,0.0,predictor
+HV009,n_miembros,N miembros hogar,int64,0.0,predictor
+HV014,n_menores5,N menores 5 años,int64,0.0,predictor
+HV201,fuente_agua,Fuente de agua,str,0.0,predictor
+HV205,tipo_sanitario,Tipo sanitario,str,0.0,predictor
+HV206,tiene_elect,Tiene electricidad,str,0.0,predictor
+HV213,material_piso,Material piso,str,0.0,predictor
+HV270,indice_riqueza,Índice riqueza (quintil 1-5),str,0.0,predictor
+HV271,puntaje_riqueza,Puntaje continuo riqueza,str,0.0,predictor
+M1,lugar_parto,Lugar del parto,str,0.0,predictor
+M4,lactancia_dura,Duración lactancia (meses),int64,0.0,predictor
+M5,lactancia_exclusiva,Lactancia exclusiva meses,int64,0.0,predictor
+M14,n_controles_prenatales,N controles prenatales,str,0.0,predictor
+M17,asistio_parto,Asistencia profesional parto,int64,0.0,predictor
+M18,inicio_prenatal,Mes inicio prenatal,int64,0.0,predictor
+M19,peso_nacer_g,Peso al nacer (g),float64,2.01,predictor
+M36,meses_prev_nacer,Meses desde nac anterior,str,0.0,predictor
+M45,actualmente_amamanta,Actualmente amamanta,str,0.0,predictor
+HW57A,anemia,"TARGET: 1=anemia, 0=sin anemia. Def OMS2024/RM251-2024",int,0.0,target
+HW2/10,peso_kg,Peso niño en kg,float64,0.0,predictor
+HW3/10,talla_cm,Talla niño en cm,float64,0.0,predictor
