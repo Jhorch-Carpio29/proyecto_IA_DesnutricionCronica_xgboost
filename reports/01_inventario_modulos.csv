@@ -1,11 +1,24 @@
-﻿archivo,modulo,filas,columnas,celdas_nulas,pct_nulo,descripcion
-REC44_2025.csv,1638_Anemia,18841,34,0,0.0,Hemoglobina / Nivel de anemia / Peso-Talla niño
-RECH5_2025.csv,1638_Anemia,37679,40,0,0.0,Mediciones antropométricas de mujeres (madres)
-RECH6_2025.csv,1638_Anemia,19298,43,0,0.0,Mediciones hemoglobina / antrop. niños (duplica algo de REC44)
-RECH0_2025.csv,1629_Hogar,37331,44,0,0.0,"Hogar: conglomerado, peso muestral, región, área, altitud"
-RECH1_2025.csv,1629_Hogar,131929,36,0,0.0,"Miembros del hogar: sexo, edad, parentesco, educación"
-RECH4_2025.csv,1629_Hogar,131929,22,0,0.0,Vacunas y salud por miembro
-RECHM_2025.csv,1629_Hogar,2714,8,0,0.0,Migración
-RECH23_2025.csv,1630_Vivienda,37331,130,0,0.0,"Vivienda: agua, saneamiento, piso, activos, índice riqueza"
-REC41_2025.csv,1633_Embarazo,18841,147,0,0.0,"Embarazo, parto, controles prenatales, lactancia"
-REC94_2025.csv,1633_Embarazo,18841,61,0,0.0,Suplemento hierro y micronutrientes [DUDOSA - posible efecto]
+modulo_archivo,archivo_csv,ruta_absoluta,ruta_relativa,filas,columnas,tamano_bytes
+DIT,DIT_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1036-inmunizacion/DIT_2025.csv,data/1036-inmunizacion/DIT_2025.csv,18470,63,2733783
+PS_COMEDOR,PS_COMEDOR_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1041-programasocial/PS_COMEDOR_2025.csv,data/1041-programasocial/PS_COMEDOR_2025.csv,1478,10,62621
+PS_CUNAMAS_VISITA,PS_CUNAMAS_VISITA_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1041-programasocial/PS_CUNAMAS_VISITA_2025.csv,data/1041-programasocial/PS_CUNAMAS_VISITA_2025.csv,2620,10,110715
+PS_QALIWARMA,PS_QALIWARMA_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1041-programasocial/PS_QALIWARMA_2025.csv,data/1041-programasocial/PS_QALIWARMA_2025.csv,18772,11,828981
+PS_TRABAJA,PS_TRABAJA_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1041-programasocial/PS_TRABAJA_2025.csv,data/1041-programasocial/PS_TRABAJA_2025.csv,129,10,5484
+PS_VL,PS_VL_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1041-programasocial/PS_VL_2025.csv,data/1041-programasocial/PS_VL_2025.csv,9353,10,394989
+PS_WAWAWASI,PS_WAWAWASI_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1041-programasocial/PS_WAWAWASI_2025.csv,data/1041-programasocial/PS_WAWAWASI_2025.csv,830,10,35174
+Programas Sociales x Hogar,Programas Sociales x Hogar_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1041-programasocial/Programas Sociales x Hogar_2025.csv,data/1041-programasocial/Programas Sociales x Hogar_2025.csv,33569,21,2155165
+REC0111,REC0111_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1031-mef/REC0111_2025.csv,data/1031-mef/REC0111_2025.csv,36260,103,11658315
+REC41,REC41_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1633_embarazo/REC41_2025.csv,data/1633_embarazo/REC41_2025.csv,18841,147,6295500
+REC42,REC42_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1036-inmunizacion/REC42_2025.csv,data/1036-inmunizacion/REC42_2025.csv,32700,169,13149397
+REC43,REC43_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1036-inmunizacion/REC43_2025.csv,data/1036-inmunizacion/REC43_2025.csv,18841,168,7166912
+REC44,REC44_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1638_anemia/REC44_2025.csv,data/1638_anemia/REC44_2025.csv,18841,34,2534735
+REC91,REC91_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1031-mef/REC91_2025.csv,data/1031-mef/REC91_2025.csv,36260,343,25733459
+REC94,REC94_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1633_embarazo/REC94_2025.csv,data/1633_embarazo/REC94_2025.csv,18841,61,2748257
+REC95,REC95_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1036-inmunizacion/REC95_2025.csv,data/1036-inmunizacion/REC95_2025.csv,18841,315,14672890
+RECH0,RECH0_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1629_hogar/RECH0_2025.csv,data/1629_hogar/RECH0_2025.csv,37331,44,6605009
+RECH1,RECH1_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1629_hogar/RECH1_2025.csv,data/1629_hogar/RECH1_2025.csv,131929,36,12847902
+RECH23,RECH23_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1630_vivienda/RECH23_2025.csv,data/1630_vivienda/RECH23_2025.csv,37331,130,11253400
+RECH4,RECH4_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1629_hogar/RECH4_2025.csv,data/1629_hogar/RECH4_2025.csv,131929,22,8181141
+RECH5,RECH5_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1638_anemia/RECH5_2025.csv,data/1638_anemia/RECH5_2025.csv,37679,40,5407129
+RECH6,RECH6_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1638_anemia/RECH6_2025.csv,data/1638_anemia/RECH6_2025.csv,19298,43,3036117
+RECHM,RECHM_2025.csv,/home/hearelmer/Desktop/V-III/ai/finalproject/data/1629_hogar/RECHM_2025.csv,data/1629_hogar/RECHM_2025.csv,2714,8,103694
