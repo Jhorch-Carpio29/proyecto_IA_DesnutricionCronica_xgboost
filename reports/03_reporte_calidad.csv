@@ -1,0 +1,7 @@
+regla_calidad,filas_afectadas,pct_afectadas,accion_tomada,estado
+Edad materna al parto >= 12 años,0,0.0,Valores inconsistentes a NaN,✓ OK
+Total miembros >= menores de 5 años,0,0.0,Consistente,✓ OK
+Habitaciones para dormir >= 1,0,0.0,Ajustado a mínimo 1,✓ OK
+Vacuna SPR1 recibida solo si edad >= 9m,0,0.0,Inconsistente ajustado a 0,✓ OK
+"Sin duplicados por llave (HHID, HC0)",0,0.0,Aserción,✓ OK
+Sin predictores constantes (>99%),24,0.0,Conservar,"Alertas: ['lactancia_exclusiva_6m', 'hierro_madre_gestacion', 'bano_compartido', 'tratamiento_agua', 'tiene_electricidad', 'tiene_refrigerador', 'seguro_essalud', 'vacuna_bcg', 'vacuna_spr1', 'suplemento_vitamina_a', 'desparasitacion_infantil', 'diarrea_reciente_eda', 'diarrea_con_sangre', 'fiebre_reciente', 'tos_ira_reciente', 'signos_neumonia', 'vacuna_neumococo_dosis1', 'vacuna_neumococo_dosis2', 'vacuna_rotavirus_dosis1', 'vacuna_rotavirus_dosis2', 'programa_cuna_mas', 'agua_segura_jmp', 'saneamiento_adecuado_jmp', 'lactancia_exclusiva_adecuada']"

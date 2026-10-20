@@ -1,0 +1,69 @@
+variable,pct_nulos_global,pct_0_5m,pct_6_11m,pct_12_23m,pct_24_35m,pct_36_47m,pct_48_59m,tipo_nulo,decision
+tiene_refrigerador,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+tiene_electricidad,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+hierro_madre_gestacion,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+lactancia_exclusiva_6m,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Estructural (Edad / Filtro Lactancia),Conservar (XGBoost aprende default direction)
+vacuna_rotavirus_dosis2,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+programa_cuna_mas,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+agua_segura_jmp,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+saneamiento_adecuado_jmp,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+bano_compartido,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+tratamiento_agua,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+vacuna_neumococo_dosis1,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+signos_neumonia,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+diarrea_reciente_eda,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+diarrea_con_sangre,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+fiebre_reciente,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+tos_ira_reciente,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+vacuna_bcg,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+vacuna_spr1,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+suplemento_vitamina_a,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+lactancia_exclusiva_adecuada,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Estructural (Edad / Filtro Lactancia),Conservar (XGBoost aprende default direction)
+vacuna_rotavirus_dosis1,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+vacuna_neumococo_dosis2,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+desparasitacion_infantil,100.0,100.0,100.0,100.0,100.0,100.0,100.0,Aleatorio / No sabe,Conservar con NaN nativo
+duracion_lactancia_m,42.99,98.45,94.93,73.86,32.11,13.96,10.48,Estructural (Edad / Filtro Lactancia),Conservar (XGBoost aprende default direction)
+dias_hierro_madre,18.29,7.07,6.8,9.72,16.37,23.38,32.47,Aleatorio / No sabe,Conservar con NaN nativo
+mes_inicio_prenatal,14.97,5.05,4.31,6.81,13.02,19.24,28.84,Aleatorio / No sabe,Conservar con NaN nativo
+controles_prenatales,14.3,4.11,3.19,6.02,12.58,18.74,28.18,Aleatorio / No sabe,Conservar con NaN nativo
+peso_al_nacer_g,7.33,5.82,4.72,5.44,7.51,7.68,10.43,Aleatorio / No sabe,Conservar con NaN nativo
+bajo_peso_nacer,7.33,5.82,4.72,5.44,7.51,7.68,10.43,Aleatorio / No sabe,Conservar con NaN nativo
+controles_cred_numero,5.95,3.42,2.84,4.54,5.86,6.85,8.82,Aleatorio / No sabe,Conservar con NaN nativo
+adherencia_cred,5.95,3.42,2.84,4.54,5.86,6.85,8.82,Aleatorio / No sabe,Conservar con NaN nativo
+educacion_madre_anos,5.87,4.11,3.45,4.59,6.25,6.25,8.13,Aleatorio / No sabe,Conservar con NaN nativo
+meses_amamantamiento,5.65,3.65,3.19,4.36,5.75,6.23,8.05,Aleatorio / No sabe,Conservar con NaN nativo
+imc_madre,5.17,3.42,2.74,4.12,5.28,5.71,7.29,Estructural (Madre ausente en hogar),Conservar con flag madre_en_cuestionario
+talla_madre_cm,5.16,3.42,2.74,4.12,5.28,5.71,7.26,Estructural (Madre ausente en hogar),Conservar con flag madre_en_cuestionario
+tamano_nacer_aparente,5.1,3.42,2.74,4.07,5.2,5.56,7.26,Aleatorio / No sabe,Conservar con NaN nativo
+carne_vacunacion_visto,5.08,3.42,2.64,4.04,5.18,5.56,7.24,Aleatorio / No sabe,Conservar con NaN nativo
+educacion_madre_nivel,5.08,3.42,2.64,4.04,5.18,5.56,7.24,Estructural (Madre ausente en hogar),Conservar con flag madre_en_cuestionario
+lugar_parto,5.08,3.42,2.64,4.04,5.18,5.56,7.24,Aleatorio / No sabe,Conservar con NaN nativo
+edad_madre_anos,5.08,3.42,2.64,4.04,5.18,5.56,7.24,Estructural (Madre ausente en hogar),Conservar con flag madre_en_cuestionario
+lengua_materna_madre,5.08,3.42,2.64,4.04,5.18,5.56,7.24,Aleatorio / No sabe,Conservar con NaN nativo
+estado_conyugal_madre,5.07,3.42,2.64,4.04,5.18,5.56,7.21,Aleatorio / No sabe,Conservar con NaN nativo
+material_piso,1.47,1.94,0.56,1.66,1.44,1.85,1.23,Aleatorio / No sabe,Conservar con NaN nativo
+piso_tierra_critico,1.47,1.94,0.56,1.66,1.44,1.85,1.23,Aleatorio / No sabe,Conservar con NaN nativo
+programa_juntos,0.04,0.0,0.05,0.05,0.05,0.02,0.03,Aleatorio / No sabe,Conservar con NaN nativo
+programa_vaso_leche,0.04,0.0,0.0,0.05,0.05,0.02,0.08,Aleatorio / No sabe,Conservar con NaN nativo
+programa_comedor,0.03,0.0,0.0,0.05,0.03,0.0,0.08,Aleatorio / No sabe,Conservar con NaN nativo
+sexo_nino,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+edad_meses,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+menores_5anos_hogar,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+madre_en_cuestionario,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+atencion_parto_calif,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+habitaciones_dormir,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+combustible_cocinar,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+tipo_servicio_higienico,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+mujeres_edad_fertil,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+departamento,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+area_residencia,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+altitud_msnm,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+fuente_agua_beber,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+total_miembros_hogar,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+quintil_riqueza,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+seguro_sis,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+seguro_essalud,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+grupo_edad_nino,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+hacinamiento_critico,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+indice_hacinamiento,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar
+combustible_contaminante_biomasa,0.0,0.0,0.0,0.0,0.0,0.0,0.0,Sin nulos,Conservar

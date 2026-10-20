@@ -1,0 +1,11 @@
+variable,rango_plausible_min,rango_plausible_max,n_imposibles_nan,n_outliers_iqr,pct_outliers,tratamiento,justificacion
+edad_meses,0.0,59.0,0,0,0.0,Convertir imposibles a NaN; conservar extremos válidos,Edad pediátrica de 0 a 59 meses cumplidos
+peso_al_nacer_g,500.0,6000.0,0,433,2.46,Convertir imposibles a NaN; conservar extremos válidos,Peso al nacer viable en gramos (OMS)
+talla_madre_cm,120.0,195.0,0,203,1.13,Convertir imposibles a NaN; conservar extremos válidos,Talla adulta femenina en cm (MINSA)
+imc_madre,12.0,55.0,3,285,1.58,Convertir imposibles a NaN; conservar extremos válidos,Rango de masa corporal femenina
+edad_madre_anos,12.0,49.0,0,0,0.0,Convertir imposibles a NaN; conservar extremos válidos,Edad reproductiva MEF
+altitud_msnm,0.0,5100.0,0,0,0.0,Convertir imposibles a NaN; conservar extremos válidos,Altitud geográfica poblada en Perú (La Rinconada 5100 m)
+total_miembros_hogar,1.0,30.0,0,377,1.99,Convertir imposibles a NaN; conservar extremos válidos,Composición demográfica familiar
+habitaciones_dormir,1.0,15.0,0,45,0.24,Convertir imposibles a NaN; conservar extremos válidos,Capacidad de la vivienda
+controles_prenatales,0.0,30.0,0,675,4.15,Convertir imposibles a NaN; conservar extremos válidos,Visitas médicas durante la gestación
+controles_cred_numero,0.0,35.0,121,74,0.41,Convertir imposibles a NaN; conservar extremos válidos,Controles de crecimiento infantil recibidos

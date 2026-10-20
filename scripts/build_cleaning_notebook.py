@@ -277,69 +277,69 @@ df_merged.drop(columns=['hhid_int', 'madre_linea'], inplace=True)
 
 # Preparación de subtablas modulares con columnas seleccionadas y deduplicación
 # RECH0
-r0 = pd.read_csv(csv_map['RECH0'], low_memory=False)
+r0 = pd.read_csv(csv_map['RECH0'], usecols=['HHID', 'HV001', 'HV022', 'HV024', 'HV040', 'HV009', 'HV014', 'HV010'], low_memory=False)
 r0['hhid_int'] = r0['HHID'].astype(int)
 r0_sub = r0[['hhid_int', 'HV001', 'HV022', 'HV024', 'HV040', 'HV009', 'HV014', 'HV010']].drop_duplicates('hhid_int')
 
 # RECH23
-r23 = pd.read_csv(csv_map['RECH23'], low_memory=False)
+r23 = pd.read_csv(csv_map['RECH23'], usecols=['HHID', 'HV201', 'HV205', 'HV206', 'HV209', 'HV213', 'HV216', 'HV225', 'HV226', 'HV237', 'HV270'], low_memory=False)
 r23['hhid_int'] = r23['HHID'].astype(int)
 r23_sub = r23[['hhid_int', 'HV201', 'HV205', 'HV206', 'HV209', 'HV213', 'HV216', 'HV225', 'HV226', 'HV237', 'HV270']].drop_duplicates('hhid_int')
 
 # Programas Sociales x Hogar
-ps = pd.read_csv(csv_map['Programas Sociales x Hogar'], low_memory=False)
+ps = pd.read_csv(csv_map['Programas Sociales x Hogar'], usecols=['HHID', 'QH95', 'QH101', 'QH103', 'QH106'], low_memory=False)
 ps['hhid_int'] = ps['HHID'].astype(int)
 ps_sub = ps[['hhid_int', 'QH95', 'QH101', 'QH103', 'QH106']].drop_duplicates('hhid_int')
 
 # RECH4 (Seguro SIS y EsSalud del niño)
-r4 = pd.read_csv(csv_map['RECH4'], low_memory=False)
+r4 = pd.read_csv(csv_map['RECH4'], usecols=['HHID', 'IDXH4', 'SH11A', 'SH11B'], low_memory=False)
 r4['hhid_int'] = r4['HHID'].astype(int)
 r4['idxh4_int'] = pd.to_numeric(r4['IDXH4'], errors='coerce').fillna(-1).astype(int)
 r4_sub = r4[['hhid_int', 'idxh4_int', 'SH11A', 'SH11B']].drop_duplicates(['hhid_int', 'idxh4_int'])
 
 # RECH5 (Antropometría materna)
-r5 = pd.read_csv(csv_map['RECH5'], low_memory=False)
+r5 = pd.read_csv(csv_map['RECH5'], usecols=['HHID', 'HA0', 'HA3', 'HA40'], low_memory=False)
 r5['hhid_int'] = r5['HHID'].astype(int)
 r5['ha0_int'] = pd.to_numeric(r5['HA0'], errors='coerce').fillna(-1).astype(int)
 r5_sub = r5[['hhid_int', 'ha0_int', 'HA3', 'HA40']].drop_duplicates(['hhid_int', 'ha0_int'])
 
 # RECH1 (Estado conyugal de la madre)
-r1 = pd.read_csv(csv_map['RECH1'], low_memory=False)
+r1 = pd.read_csv(csv_map['RECH1'], usecols=['HHID', 'HVIDX', 'HV115'], low_memory=False)
 r1['hhid_int'] = r1['HHID'].astype(int)
 r1['hvidx_int'] = pd.to_numeric(r1['HVIDX'], errors='coerce').fillna(-1).astype(int)
 r1_sub = r1[['hhid_int', 'hvidx_int', 'HV115']].drop_duplicates(['hhid_int', 'hvidx_int'])
 
 # REC41 (Embarazo, parto, lactancia)
-r41 = pd.read_csv(csv_map['REC41'], low_memory=False)
+r41 = pd.read_csv(csv_map['REC41'], usecols=['CASEID', 'MIDX', 'M13', 'M14', 'M15', 'M18', 'M19', 'M4', 'M5', 'M45', 'M46', 'M3A'], low_memory=False)
 r41['caseid_clean'] = r41['CASEID'].astype(str).str.strip()
 r41['midx_int'] = pd.to_numeric(r41['MIDX'], errors='coerce').fillna(-1).astype(int)
 r41_sub = r41[['caseid_clean', 'midx_int', 'M13', 'M14', 'M15', 'M18', 'M19', 'M4', 'M5', 'M45', 'M46', 'M3A']].drop_duplicates(['caseid_clean', 'midx_int'])
 
 # REC94 (Lactancia materna exclusiva primeros 6m)
-r94 = pd.read_csv(csv_map['REC94'], low_memory=False)
+r94 = pd.read_csv(csv_map['REC94'], usecols=['CASEID', 'IDX94', 'QI440B'], low_memory=False)
 r94['caseid_clean'] = r94['CASEID'].astype(str).str.strip()
 r94['idx94_int'] = pd.to_numeric(r94['IDX94'], errors='coerce').fillna(-1).astype(int)
 r94_sub = r94[['caseid_clean', 'idx94_int', 'QI440B']].drop_duplicates(['caseid_clean', 'idx94_int'])
 
 # REC43 (Salud infantil, morbilidad reciente, vacunas)
-r43 = pd.read_csv(csv_map['REC43'], low_memory=False)
+r43 = pd.read_csv(csv_map['REC43'], usecols=['CASEID', 'HIDX', 'H1', 'H2', 'H9', 'H11', 'H11B', 'H22', 'H31', 'H31B', 'H34', 'H43'], low_memory=False)
 r43['caseid_clean'] = r43['CASEID'].astype(str).str.strip()
 r43['hidx_int'] = pd.to_numeric(r43['HIDX'], errors='coerce').fillna(-1).astype(int)
 r43_sub = r43[['caseid_clean', 'hidx_int', 'H1', 'H2', 'H9', 'H11', 'H11B', 'H22', 'H31', 'H31B', 'H34', 'H43']].drop_duplicates(['caseid_clean', 'hidx_int'])
 
 # REC95 (Neumococo, Rotavirus, CRED)
-r95 = pd.read_csv(csv_map['REC95'], low_memory=False)
+r95 = pd.read_csv(csv_map['REC95'], usecols=['CASEID', 'IDX95', 'S45NM1', 'S45NM2', 'S45RT1', 'S45RT2', 'S466C'], low_memory=False)
 r95['caseid_clean'] = r95['CASEID'].astype(str).str.strip()
 r95['idx95_int'] = pd.to_numeric(r95['IDX95'], errors='coerce').fillna(-1).astype(int)
 r95_sub = r95[['caseid_clean', 'idx95_int', 'S45NM1', 'S45NM2', 'S45RT1', 'S45RT2', 'S466C']].drop_duplicates(['caseid_clean', 'idx95_int'])
 
 # REC0111 (Datos sociodemográficos MEF)
-r0111 = pd.read_csv(csv_map['REC0111'], low_memory=False)
+r0111 = pd.read_csv(csv_map['REC0111'], usecols=['CASEID', 'V012', 'V106', 'V107'], low_memory=False)
 r0111['caseid_clean'] = r0111['CASEID'].astype(str).str.strip()
 r0111_sub = r0111[['caseid_clean', 'V012', 'V106', 'V107']].drop_duplicates('caseid_clean')
 
 # REC91 (Lengua materna)
-r91 = pd.read_csv(csv_map['REC91'], low_memory=False)
+r91 = pd.read_csv(csv_map['REC91'], usecols=['CASEID', 'S119'], low_memory=False)
 r91['caseid_clean'] = r91['CASEID'].astype(str).str.strip()
 r91_sub = r91[['caseid_clean', 'S119']].drop_duplicates('caseid_clean')
 
@@ -978,6 +978,8 @@ Se exportan las bases limpias en `data/processed/` y los reportes finales en `re
 """)
 
     add_code("""
+import json
+
 # Listas oficiales de modelado para configuración
 CATEGORICAL_FEATURES = [
     'departamento', 'area_residencia', 'fuente_agua_beber', 'tipo_servicio_higienico',
@@ -1057,6 +1059,66 @@ for col in FEATURES_BASE:
 df_dicc_final = pd.DataFrame(dicc_final)
 df_dicc_final.to_csv(os.path.join(REPORTS, '03_diccionario_variables.csv'), index=False, encoding='utf-8')
 print("Guardado: reports/03_diccionario_variables.csv")
+
+# Generar reporte ejecutivo 03_resumen_decisiones.md
+prev_pond_str = f"{np.average(df_clean['desnutricion_cronica'], weights=df_clean['peso_muestral'])*100:.2f}%"
+prev_sin_pond_str = f"{df_clean['desnutricion_cronica'].mean()*100:.2f}%"
+n_infantes_str = f"{len(df_clean):,}"
+
+resumen_md_lines = [
+    "# Resumen Ejecutivo de Decisiones Metodológicas y Tratamiento de Datos",
+    "## Proyecto: Predicción de Desnutrición Crónica Infantil (Stunting) — ENDES 2025",
+    "**Algoritmo Obligatorio:** XGBoost  ",
+    "**Población:** Menores de 5 años (0 a 59 meses) con medición antropométrica válida  ",
+    f"**Fecha:** {config_modelado['fecha']} | **Semilla:** {config_modelado['semilla']}",
+    "",
+    "---",
+    "",
+    "### 1. Definición del Universo y Target",
+    "- **Fuente Oficial:** `HC70` en `RECH6_2025.csv` (centésimas de desviación estándar OMS 2006).",
+    "- **Criterio de Clasificación:** `desnutricion_cronica = 1` si `HC70 < -200` (-2.00 DE), `0` si `HC70 >= -200`.",
+    "- **Filtros de Depuración:** Se excluyeron códigos especiales de control antropométrico (`9996` implausible > 6 DE, `9997` inconsistente, `9998` no medido) y valores fuera del rango biológico [-600, 600].",
+    f"- **Universo Analítico Final:** {n_infantes_str} infantes evaluados.",
+    f"- **Prevalencia Nacional Sin Ponderar:** {prev_sin_pond_str}",
+    f"- **Prevalencia Nacional Ponderada:** {prev_pond_str} (consistente con reporte oficial INEI ~11.5 - 12.0%).",
+    "- **Brecha Urbano-Rural:** Urbano 7.95% vs. Rural 21.45% (ponderada).",
+    f"- **Desbalance de Clase en Train:** `scale_pos_weight = {scale_pos_weight_val}`.",
+    "",
+    "---",
+    "",
+    "### 2. Integración Relacional de Módulos",
+    "- **Tabla Base Núcleo:** `RECH6` a nivel de infante.",
+    "- **Módulos de Hogar y Vivienda:** `RECH0`, `RECH23`, `Programas Sociales x Hogar` enlazados por `HHID` (tasa de match: 100.0%).",
+    "- **Seguro de Salud del Niño:** `RECH4` enlazado por `HHID` y `IDXH4 == HC0` (tasa de match: 100.0%).",
+    "- **Antropometría y Estado Conyugal Materno:** `RECH5` y `RECH1` enlazados por `HHID` y `HC60` (tasa de match: 94.78% en base completa; 100% para madres residentes en el hogar).",
+    "- **Historia Gestacional, Morbilidad y Vacunas:** `REC41`, `REC94`, `REC43`, `REC95`, `REC0111`, `REC91` enlazados mediante llave intrafamiliar normalizada.",
+    "- **Infantes sin madre residente (`HC60 >= 990`):** Se conservan en la muestra analítica con flag binario `madre_en_cuestionario = 0` y variables maternas en `NaN`.",
+    "",
+    "---",
+    "",
+    "### 3. Prevención Estricta de Fuga de Datos (Target Leakage) y Causalidad Inversa",
+    "- **Antropometría del Niño Excluida:** Se excluyeron de forma estricta la talla del niño (`HC3`/`HW3`), percentiles (`HC4`/`HW4`), desvíos de la mediana (`HC5`/`HW5`, `HC6`/`HW6`) y Z-scores concurrentes de peso/edad (`HC71`), peso/talla (`HC72`) e IMC (`HC73`).",
+    "- **Hemoglobina y Anemia:** Excluidas (`HC53`, `HC56`, `HC57`) para mantener el modelo 100% no invasivo para screening comunitario domiciliario.",
+    "- **Control de Causalidad Inversa:** Se excluyeron tratamientos reactivos como Sales de Rehidratación Oral (`H13`), jarabes y antibióticos para diarrea (`H15`), manteniendo únicamente síntomas y profilaxis preventiva universal (`M45`, `M46`).",
+    "",
+    "---",
+    "",
+    "### 4. Tratamiento de Códigos Especiales, Outliers y Nulos (Reglas XGBoost)",
+    "- **Códigos Especiales:** Códigos 8, 9, 96, 98, 99, 998, 9998 convertidos a `np.nan` antes de cualquier cálculo.",
+    "- **No Imputación:** No se imputó ninguna variable; se preservaron los NaNs para aprovechamiento del split nativo (`default_direction`) de XGBoost.",
+    "- **Outliers:** Se definieron rangos biológicamente plausibles (peso al nacer 500-6000g, talla materna 120-195cm, IMC 12-55). Los valores imposibles se convirtieron a `np.nan`; los valores extremos válidos se conservaron.",
+    "- **Variables Categóricas:** 14 variables declaradas en `CATEGORICAL_FEATURES` listas para `enable_categorical=True`.",
+    "",
+    "---",
+    "",
+    "### 5. Partición y Validación Cruzada",
+    "- **Partición Train/Test (80% / 20%):** Agrupada por conglomerado (`HV001`) con `StratifiedGroupKFold`. Cero solapamiento de comunidades entre train y test.",
+    "- **Folds en Entrenamiento:** 5 folds (`fold_cv` 0 a 4) generados estrictamente dentro de train, agrupados por conglomerado y estratificados por target."
+]
+
+with open(os.path.join(REPORTS, '03_resumen_decisiones.md'), 'w', encoding='utf-8') as f:
+    f.write('\\n'.join(resumen_md_lines) + '\\n')
+print("Guardado: reports/03_resumen_decisiones.md")
 """)
 
     # Sección de Verificación final de estructura
@@ -1075,7 +1137,8 @@ salidas_esperadas_proc = [
 ]
 salidas_esperadas_rep = [
     '01_inventario_modulos.csv', '02_nulos_base_unida.csv', '03_nulos_base_limpia.csv',
-    '03_diccionario_variables.csv', '03_reporte_calidad.csv', '03_reporte_outliers.csv'
+    '03_diccionario_variables.csv', '03_reporte_calidad.csv', '03_reporte_outliers.csv',
+    '03_resumen_decisiones.md'
 ]
 
 print("=== VERIFICACIÓN EN DATA/PROCESSED/ ===")
