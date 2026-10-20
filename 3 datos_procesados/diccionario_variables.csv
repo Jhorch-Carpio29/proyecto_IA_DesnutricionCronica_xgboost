@@ -1,0 +1,51 @@
+﻿bloque,nombre,rol,tipo,tabla,codigo,codigos_a_nan,descripcion
+Llaves,caseid,id,identificador,REC44,CASEID,,Identificador de la madre entrevistada
+Llaves,hhid,id,identificador,REC0111,HHID,,Identificador del hogar
+Llaves,conglomerado,grupo,identificador,REC0111,V001,,Conglomerado muestral (sirve para dividir train/test por grupos)
+Llaves,factor_ponderacion,peso,numérica,REC0111,V005,,Factor de expansión de la madre (dividir entre 1 000 000); solo para inferencia poblacional
+Hogar y geografía,n_miembros_hogar,excluir,numérica,RECH0,HV009,,Total de personas en el hogar (insumo de hacinamiento)
+Hogar y geografía,n_dormitorios,excluir,numérica,RECH23,HV216,,Habitaciones usadas para dormir (insumo de hacinamiento)
+Niño,edad_meses,feature,numérica,REC44,HW1,,Edad del niño en meses (0-59)
+Niño,sexo_nino,feature,numérica,REC21,B4,,"1 = hombre, 2 = mujer"
+Niño,orden_nacimiento,feature,numérica,REC21,BORD,,Orden de nacimiento entre los hijos de la madre
+Niño,intervalo_nac_previo_meses,feature,numérica,RECH6,HC63,,Meses desde el nacimiento anterior. Vacío = primogénito o niño sin pareja en el puente (el código 999 de RECH6 no aparece en este dataset)
+Niño,nivel_anemia_nino,feature,numérica,REC44,HW57,9,"Anemia con hemoglobina YA ajustada por altitud (RM 363-2022-MINSA): 1 grave, 2 moderada, 3 leve, 4 sin anemia, 9 = no medida (casi todos menores de 6 meses)"
+Embarazo y parto,peso_nacer_g,feature,numérica,REC41,M19,"9996, 9998","Peso al nacer en gramos (9996 = no se pesó, 9998 = no sabe)"
+Embarazo y parto,visitas_prenatales,feature,numérica,REC41,M14,98,N° de controles prenatales (98 = no sabe)
+Embarazo y parto,hierro_embarazo,feature,numérica,REC41,M45,8,"Recibió hierro en el embarazo: 0 no, 1 sí, 8 no sabe"
+Embarazo y parto,tamano_percibido_nacer,feature,numérica,REC41,M18,8,"Tamaño al nacer según la madre: 1 muy grande, 2 más grande que el promedio, 3 promedio, 4 más pequeño, 5 muy pequeño, 8 no sabe (respaldo de peso_nacer_g)"
+Embarazo y parto,lugar_parto,feature,categórica,REC41,M15,,"Lugar del parto (11-12 domicilio, 21-27 establecimiento público, 31-32 privado, 41-42 ONG/iglesia, 96 otro)"
+Lactancia,meses_lactancia,feature,numérica,REC41,M5,98,"Meses de lactancia (94 = nunca amamantó, 98 = no sabe; el código 95 'aún amamanta' no aparece en 2025)"
+Lactancia,lactancia_exclusiva_6m,feature,numérica,REC94,QI440B,8,"Solo leche materna los primeros 6 meses: 1 sí, 2 no, 8 no sabe (vacío si el niño aún no los cumple)"
+Enfermedades recientes,diarrea_2sem,feature,numérica,REC43,H11,8,"Diarrea: 0 no, 1 últimas 24 h, 2 últimas 2 semanas, 8 no sabe"
+Enfermedades recientes,tos_2sem,feature,numérica,REC43,H31,8,"Tos (indicador de infección respiratoria, IRA): 0 no, 1 últimas 24 h, 2 últimas 2 semanas, 8 no sabe"
+Salud del niño,n_controles_cred,feature,numérica,REC95,S466C,98,"N° de controles de crecimiento y desarrollo, CRED (98 = no sabe)"
+Salud del niño,hierro_jarabe_7d,feature,numérica,REC95,S465EA,8,"Tomó hierro en jarabe en los últimos 7 días: 1 sí, 2 no, 8 no sabe"
+Salud del niño,micronutrientes_polvo_7d,feature,numérica,REC95,S465EC,8,"Tomó micronutrientes en polvo (chispitas) en los últimos 7 días: 1 sí, 2 no, 8 no sabe"
+Salud del niño,antiparasitario_12m,feature,numérica,REC43,H43,,"Antiparasitarios en los últimos 12 meses (ventana confirmada en el diccionario INEI de REC43): 0 no, 1 sí"
+Salud del niño,vacuna_dpt3,feature,numérica,REC43,H7,8,"DPT/pentavalente 3ra dosis: 0 no; 1, 2 y 3 = sí (fecha en carné / lo reporta la madre / marcada en carné; se unifican en 1); 8 no sabe"
+Salud del niño,vacuna_polio3,feature,numérica,REC43,H8,8,Polio 3ra dosis (mismos códigos; 1-3 se unifican en 1)
+Salud del niño,vacuna_sarampion,feature,numérica,REC43,H9,8,Sarampión/SPR (mismos códigos; 1-3 se unifican en 1)
+Madre,edad_madre,feature,numérica,REC0111,V012,,Edad de la madre en años
+Madre,edad_primer_parto,feature,numérica,RE223132,V212,,Edad de la madre al primer parto
+Madre,nivel_educativo_madre,feature,numérica,REC0111,V106,,"0 sin educación, 1 primaria, 2 secundaria, 3 superior"
+Madre,lengua_materna_madre,feature,categórica,REC0111,V131,,"Lengua materna: 1 quechua, 2 aimara, 3 ashaninka, 4 awajún, 5 shipibo, 6 shawi, 7 matsigenka, 8 achuar, 9 otra nativa, 10 castellano, 11-13 otras"
+Madre,talla_madre_x10,feature,numérica,RECH5,HA3,9999,Talla de la madre en cm ×10 (1510 = 151.0). 9999 = no medida
+Madre,imc_madre_x100,feature,numérica,RECH5,HA40,"9998, 9999",Índice de masa corporal de la madre ×100 (2500 = 25.0). 9999 = no medido
+Hogar y geografía,quintil_riqueza,feature,numérica,REC0111,V190,,Índice de riqueza: 1 más pobre … 5 más rico
+Hogar y geografía,area_residencia,feature,numérica,REC0111,V025,,"1 urbano, 2 rural"
+Hogar y geografía,departamento,feature,categórica,REC0111,V024,,Departamento de residencia (código 1-25)
+Hogar y geografía,region_natural,feature,categórica,REC91,SREGION,,"1 Lima Metropolitana, 2 resto de la Costa, 3 Sierra, 4 Selva"
+Hogar y geografía,altitud_msnm,feature,numérica,RECH0,HV040,,Altitud del conglomerado en metros sobre el nivel del mar
+Hogar y geografía,tipo_servicio_higienico,feature,categórica,RECH23,HV205,,"11-12 red pública, 21 letrina ventilada, 22 pozo séptico, 23 pozo ciego, 24 colgante, 31 río/acequia, 32 sin servicio, 96 otro"
+Hogar y geografía,fuente_agua_beber,feature,categórica,RECH23,HV201,,"Fuente de agua para beber (11 red dentro de la vivienda, 12 red fuera, 13 pilón, 21-22 pozo, 41 manantial, 43 río/acequia, 61 camión cisterna, 71 embotellada, 96 otro)"
+Hogar y geografía,cloro_residual_agua,feature,categórica,RECH23,SH227,"6, 9","Prueba de cloro en el agua: 1 ≥0.5 mg/L, 2 0.1-0.5 mg/L, 3 0.0 mg/L, 4 sin tratar (río, pozo), 5 embotellada, 9 no se pudo medir; el código 6 (1 178 casos) no figura en el diccionario INEI y se deja como NaN. Es categórica: no es una concentración"
+Hogar y geografía,combustible_cocinar,feature,categórica,RECH23,HV226,,"Combustible para cocinar (2 gas, 3 gas natural, 7 carbón, 8 leña, 95 no cocina, otros)"
+Hogar y geografía,material_piso,feature,categórica,RECH23,HV213,,"11 tierra, 21 madera, 31-34 cemento/loseta/parquet/láminas, 96 otro"
+Hogar y geografía,n_menores_5_hogar,feature,numérica,RECH0,HV014,,Niños menores de 5 años en el hogar
+Hogar y geografía,hacinamiento,feature,numérica,derivada,n_miembros_hogar / n_dormitorios,,Personas por dormitorio (se calcula abajo)
+Programas y seguro,hogar_juntos,feature,numérica,PS_HOGAR,QH95,8,"Algún miembro recibe Juntos: 1 sí, 2 no, 8 no sabe"
+Programas y seguro,hogar_vaso_leche,feature,numérica,PS_HOGAR,QH101,8,"Algún miembro recibe Vaso de Leche: 1 sí, 2 no, 8 no sabe"
+Programas y seguro,seguro_nino_sis,feature,numérica,RECH4,SH11C,,"El niño tiene SIS: 0 no, 1 sí"
+Objetivo,haz,excluir,numérica,derivada,talla_edad_dest_x100,,Puntaje Z talla/edad OMS (objetivo de regresión; fuga si se usa para clasificar). Vacío si el código no es válido
+Objetivo,desnutricion_cronica,target,numérica,derivada,haz,,"1 si haz < -2, 0 en otro caso (objetivo de clasificación)"

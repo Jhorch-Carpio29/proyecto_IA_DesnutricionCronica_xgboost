@@ -1,0 +1,10 @@
+﻿paso,acción,afectados,filas,columnas
+1,Eliminar niños sin puntaje Z válido,818,18023,50
+2,Eliminar duplicados exactos,0,18023,50
+3,"Códigos especiales (9996-9999, 98, 9, 8) a NaN",5237,18023,50
+3b,meses_lactancia 94 → 0 y vacunas 1-3 → 1,106,18023,50
+4,Corregir incoherencias lógicas,21,18023,50
+5,"Atípicos por RIC: revisados, no eliminados",0,18023,50
+6,Vacunas: NaN si el niño aún no tiene edad para la dosis,5652,18023,50
+7a,Recodificar 8 variables (binarias y anemia) y renombrar 3 [= variables afectadas],8,18023,50
+9,Partición train/test por conglomerado (80/20),3602,18023,51

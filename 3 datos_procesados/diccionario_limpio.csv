@@ -1,0 +1,50 @@
+﻿bloque,nombre,nombre_crudo,rol,tipo,tratamiento,descripcion_limpia
+Llaves,caseid,caseid,id,identificador,Sin cambios,Identificador de la madre entrevistada
+Llaves,hhid,hhid,id,identificador,Sin cambios,Identificador del hogar
+Llaves,conglomerado,conglomerado,grupo,identificador,Sin cambios,Conglomerado muestral (sirve para dividir train/test por grupos)
+Llaves,factor_ponderacion,factor_ponderacion,peso,numérica,Sin cambios,Factor de expansión de la madre (dividir entre 1 000 000); solo para inferencia poblacional
+Partición,particion,,grupo,identificador,"Nueva: train/test por conglomerado (80/20, semilla 42)",train o test; todos los niños de un conglomerado van juntos
+Niño,edad_meses,edad_meses,feature,numérica,Sin cambios,Edad del niño en meses (0-59)
+Niño,nino_mujer,sexo_nino,feature,numérica,"Recodificada: 0 hombre, 1 mujer (antes sexo_nino 1/2)","0 = hombre, 1 = mujer"
+Niño,orden_nacimiento,orden_nacimiento,feature,numérica,Sin cambios,Orden de nacimiento entre los hijos de la madre
+Niño,intervalo_nac_previo_meses,intervalo_nac_previo_meses,feature,numérica,Sin cambios,Meses desde el nacimiento anterior. Vacío = primogénito o niño sin pareja en el puente (el código 999 de RECH6 no aparece en este dataset)
+Niño,severidad_anemia_nino,nivel_anemia_nino,feature,numérica,Código 9 → NaN; reordenada: 0 sin anemia … 3 grave (antes nivel_anemia_nino),"0 sin anemia, 1 leve, 2 moderada, 3 grave (ajustada por altitud)"
+Embarazo y parto,peso_nacer_g,peso_nacer_g,feature,numérica,Códigos 9996/9998 → NaN,"Peso al nacer en gramos (9996 = no se pesó, 9998 = no sabe)"
+Embarazo y parto,visitas_prenatales,visitas_prenatales,feature,numérica,Código 98 → NaN,N° de controles prenatales (98 = no sabe)
+Embarazo y parto,hierro_embarazo,hierro_embarazo,feature,numérica,8 → NaN,"Recibió hierro en el embarazo: 0 no, 1 sí, 8 no sabe"
+Embarazo y parto,tamano_percibido_nacer,tamano_percibido_nacer,feature,numérica,Código 8 → NaN,"Tamaño al nacer según la madre: 1 muy grande, 2 más grande que el promedio, 3 promedio, 4 más pequeño, 5 muy pequeño, 8 no sabe (respaldo de peso_nacer_g)"
+Embarazo y parto,lugar_parto,lugar_parto,feature,categórica,Sin cambios,"Lugar del parto (11-12 domicilio, 21-27 establecimiento público, 31-32 privado, 41-42 ONG/iglesia, 96 otro)"
+Lactancia,meses_lactancia,meses_lactancia,feature,numérica,98 → NaN; 94 (nunca amamantó) → 0; mayor que la edad → NaN,Meses de lactancia (0 = nunca amamantó)
+Lactancia,lactancia_exclusiva_6m,lactancia_exclusiva_6m,feature,numérica,8 → NaN; 1 sí / 0 no,"1 sí, 0 no (vacío si no aplica)"
+Enfermedades recientes,diarrea_2sem,diarrea_2sem,feature,numérica,8 → NaN,"Diarrea: 0 no, 1 últimas 24 h, 2 últimas 2 semanas, 8 no sabe"
+Enfermedades recientes,tos_2sem,tos_2sem,feature,numérica,8 → NaN,"Tos (indicador de infección respiratoria, IRA): 0 no, 1 últimas 24 h, 2 últimas 2 semanas, 8 no sabe"
+Salud del niño,n_controles_cred,n_controles_cred,feature,numérica,Código 98 → NaN,"N° de controles de crecimiento y desarrollo, CRED (98 = no sabe)"
+Salud del niño,hierro_jarabe_7d,hierro_jarabe_7d,feature,numérica,8 → NaN; 1 sí / 0 no,"1 sí, 0 no"
+Salud del niño,micronutrientes_polvo_7d,micronutrientes_polvo_7d,feature,numérica,8 → NaN; 1 sí / 0 no,"1 sí, 0 no"
+Salud del niño,antiparasitario_12m,antiparasitario_12m,feature,numérica,Sin cambios,"Antiparasitarios en los últimos 12 meses (ventana confirmada en el diccionario INEI de REC43): 0 no, 1 sí"
+Salud del niño,vacuna_dpt3,vacuna_dpt3,feature,numérica,8 → NaN; 1-3 → 1; NaN si el niño es menor de 6 meses,"1 vacunado, 0 no (vacío si aún no corresponde)"
+Salud del niño,vacuna_polio3,vacuna_polio3,feature,numérica,8 → NaN; 1-3 → 1; NaN si es menor de 6 meses,"1 vacunado, 0 no (vacío si aún no corresponde)"
+Salud del niño,vacuna_sarampion,vacuna_sarampion,feature,numérica,8 → NaN; 1-3 → 1; NaN si es menor de 12 meses,"1 vacunado, 0 no (vacío si aún no corresponde)"
+Madre,edad_madre,edad_madre,feature,numérica,Sin cambios,Edad de la madre en años
+Madre,edad_primer_parto,edad_primer_parto,feature,numérica,Sin cambios,Edad de la madre al primer parto
+Madre,nivel_educativo_madre,nivel_educativo_madre,feature,numérica,Sin cambios,"0 sin educación, 1 primaria, 2 secundaria, 3 superior"
+Madre,lengua_materna_madre,lengua_materna_madre,feature,categórica,Sin cambios,"Lengua materna: 1 quechua, 2 aimara, 3 ashaninka, 4 awajún, 5 shipibo, 6 shawi, 7 matsigenka, 8 achuar, 9 otra nativa, 10 castellano, 11-13 otras"
+Madre,talla_madre_x10,talla_madre_x10,feature,numérica,Código 9999 → NaN,Talla de la madre en cm ×10 (1510 = 151.0). 9999 = no medida
+Madre,imc_madre_x100,imc_madre_x100,feature,numérica,Códigos 9998/9999 → NaN; IMC fuera de 12-50 → NaN,Índice de masa corporal de la madre ×100 (2500 = 25.0). 9999 = no medido
+Hogar y geografía,quintil_riqueza,quintil_riqueza,feature,numérica,Sin cambios,Índice de riqueza: 1 más pobre … 5 más rico
+Hogar y geografía,area_rural,area_residencia,feature,numérica,"Recodificada: 0 urbano, 1 rural (antes area_residencia 1/2)","0 = urbano, 1 = rural"
+Hogar y geografía,departamento,departamento,feature,categórica,Sin cambios,Departamento de residencia (código 1-25)
+Hogar y geografía,region_natural,region_natural,feature,categórica,Sin cambios,"1 Lima Metropolitana, 2 resto de la Costa, 3 Sierra, 4 Selva"
+Hogar y geografía,altitud_msnm,altitud_msnm,feature,numérica,Sin cambios,Altitud del conglomerado en metros sobre el nivel del mar
+Hogar y geografía,tipo_servicio_higienico,tipo_servicio_higienico,feature,categórica,Sin cambios,"11-12 red pública, 21 letrina ventilada, 22 pozo séptico, 23 pozo ciego, 24 colgante, 31 río/acequia, 32 sin servicio, 96 otro"
+Hogar y geografía,fuente_agua_beber,fuente_agua_beber,feature,categórica,Sin cambios,"Fuente de agua para beber (11 red dentro de la vivienda, 12 red fuera, 13 pilón, 21-22 pozo, 41 manantial, 43 río/acequia, 61 camión cisterna, 71 embotellada, 96 otro)"
+Hogar y geografía,cloro_residual_agua,cloro_residual_agua,feature,categórica,Códigos 6 y 9 → NaN,"Prueba de cloro en el agua: 1 ≥0.5 mg/L, 2 0.1-0.5 mg/L, 3 0.0 mg/L, 4 sin tratar (río, pozo), 5 embotellada, 9 no se pudo medir; el código 6 (1 178 casos) no figura en el diccionario INEI y se deja como NaN. Es categórica: no es una concentración"
+Hogar y geografía,combustible_cocinar,combustible_cocinar,feature,categórica,Sin cambios,"Combustible para cocinar (2 gas, 3 gas natural, 7 carbón, 8 leña, 95 no cocina, otros)"
+Hogar y geografía,material_piso,material_piso,feature,categórica,Sin cambios,"11 tierra, 21 madera, 31-34 cemento/loseta/parquet/láminas, 96 otro"
+Hogar y geografía,n_menores_5_hogar,n_menores_5_hogar,feature,numérica,0 → 1 (el propio niño),Niños menores de 5 años en el hogar
+Hogar y geografía,hacinamiento,hacinamiento,feature,numérica,Sin cambios,Personas por dormitorio (se calcula abajo)
+Programas y seguro,hogar_juntos,hogar_juntos,feature,numérica,8 → NaN; 1 sí / 0 no,"1 sí, 0 no"
+Programas y seguro,hogar_vaso_leche,hogar_vaso_leche,feature,numérica,8 → NaN; 1 sí / 0 no,"1 sí, 0 no"
+Programas y seguro,seguro_nino_sis,seguro_nino_sis,feature,numérica,Sin cambios,"El niño tiene SIS: 0 no, 1 sí"
+Objetivo,haz,haz,excluir,numérica,Sin cambios,Puntaje Z talla/edad OMS (objetivo de regresión; fuga si se usa para clasificar). Vacío si el código no es válido
+Objetivo,desnutricion_cronica,desnutricion_cronica,target,numérica,Sin cambios,"1 si haz < -2, 0 en otro caso (objetivo de clasificación)"
